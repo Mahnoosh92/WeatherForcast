@@ -1,6 +1,10 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.climate.forcast.hilt)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -12,6 +16,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+        buildConfigField("String", "API_KEY", "\"${properties.getProperty("API_KEY")}\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.weatherapi.com/v1/\"")
     }
 
     buildTypes {
@@ -30,6 +39,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -37,7 +49,16 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
+    // network
+    api(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.retrofit.kotlinx.serialization.converter)
+    implementation(libs.kotlinx.serialization.json)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

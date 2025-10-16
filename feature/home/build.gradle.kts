@@ -1,0 +1,96 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+//    alias(libs.plugins.climate.forcast.hilt)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace = "com.mahnoosh.home"
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    buildFeatures {
+        compose = true
+    }
+}
+
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+
+    // Internal projects
+    implementation(projects.core.network)
+    implementation(projects.core.threading)
+// Compose
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+    implementation(libs.navigation.compose)
+    debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+
+    // hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    // serialisation
+    implementation(libs.kotlinx.serialization.json)
+
+    kaptAndroidTest(libs.hilt.kapt)
+
+    // Navigation
+    implementation(libs.navigation.compose)
+    implementation(libs.hilt.navigation.compose)
+
+    // unit test
+    testImplementation(libs.junit)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
+    testImplementation(libs.truth)
+
+    // ui test
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.ui.test.manifest)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.truth)
+    androidTestImplementation(libs.hilt.test)
+    androidTestImplementation(libs.androidx.runner)
+    androidTestImplementation(libs.androidx.core)
+    androidTestImplementation(libs.coroutines.test)
+    androidTestImplementation(libs.androidx.activity.compose)
+}

@@ -29,3 +29,4 @@ include(":core:threading")
 include(":core:database")
 include(":core:datastore")
 
+include(":feature:home")
