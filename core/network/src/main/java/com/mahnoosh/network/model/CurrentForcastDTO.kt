@@ -1,11 +1,9 @@
 package com.mahnoosh.network.model
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class CurrentForcastDTO(
-    @SerialName("location") val location: LocationDTO = LocationDTO(),
-    @SerialName("current") val current: CurrentDTO = CurrentDTO(),
-    @SerialName("forecast") val forecast: ForecastDTO = ForecastDTO()
+    @SerializedName("location") val location: LocationDTO?,
+    @SerializedName("current") val current: CurrentDTO?,
+    @SerializedName("forecast") val forecast: ForecastDTO?
 )

@@ -1,17 +1,14 @@
 package com.mahnoosh.network.model
 
+import com.google.gson.annotations.SerializedName
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class AstroDTO(
-    @SerialName("sunrise") val sunrise: String? = null,
-    @SerialName("sunset") val sunset: String? = null,
-    @SerialName("moonrise") val moonrise: String? = null,
-    @SerialName("moonset") val moonset: String? = null,
-    @SerialName("moon_phase") val moonPhase: String? = null,
-    @SerialName("moon_illumination") val moonIllumination: Int? = null,
-    @SerialName("is_moon_up") val isMoonUp: Int? = null,
-    @SerialName("is_sun_up") val isSunUp: Int? = null
+    @SerializedName("sunrise") val sunrise: String?,
+    @SerializedName("sunset") val sunset: String?,
+    @SerializedName("moonrise") val moonrise: String?,
+    @SerializedName("moonset") val moonset: String?,
+    @SerializedName("moon_phase") val moonPhase: String?,
+    @SerializedName("moon_illumination") val moonIllumination: Int?,
+    @SerializedName("is_moon_up") val isMoonUp: Int?,
+    @SerializedName("is_sun_up") val isSunUp: Int?
 )

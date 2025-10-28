@@ -1,12 +1,10 @@
 package com.mahnoosh.network.model
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class ConditionDTO(
-    @SerialName("text") val text: String? = null,
-    @SerialName("icon") val icon: String? = null,
-    @SerialName("code") val code: Int? = null
+    @SerializedName("text") val text: String?,
+    @SerializedName("icon") val icon: String?,
+    @SerializedName("code") val code: Int?
 )

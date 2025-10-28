@@ -53,7 +53,7 @@ class HomeViewModelTest {
 
             coEvery { cityUsecase(any()) } coAnswers {
                 delay(1L)
-                Result.failure<List<City>>(Exception(""))
+                Result.failure(Exception(""))
             }
 
             viewModel.onEvent(HomeEvent.GetCities)

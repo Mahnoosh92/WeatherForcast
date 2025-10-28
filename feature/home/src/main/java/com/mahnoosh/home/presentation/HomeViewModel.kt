@@ -30,6 +30,19 @@ class HomeViewModel @Inject constructor(private val cityUsecase: CityUsecase) : 
         when (event) {
             is HomeEvent.GetCities -> fetchCities()
             is HomeEvent.Search -> updateQuery(city = event.city)
+            is HomeEvent.Increase -> increase(event.id)
+        }
+    }
+
+    private fun increase(id: Long) {
+        if (_homeUiState.value is HomeUiState.Cities) {
+            val newCities = (_homeUiState.value as HomeUiState.Cities).cities.map {
+                if(it.id==id)
+                    it.copy(id = id+1)
+                else
+                    it
+            }
+            setHomeUiStateCities(cities = newCities)
         }
     }
 

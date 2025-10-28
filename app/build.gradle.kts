@@ -2,9 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-//    alias(libs.plugins.climate.forcast.hilt)
-    alias(libs.plugins.dagger.hilt.android)
-    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.climate.forcast.hilt)
+//    alias(libs.plugins.dagger.hilt.android)
+//    alias(libs.plugins.kotlin.kapt)
 }
 
 android {

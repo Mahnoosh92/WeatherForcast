@@ -26,6 +26,7 @@ runner = "1.7.0"
 androidxCore = "1.7.0"
 androidTools = "31.9.0"
 room = "2.7.2"
+gson = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,6 +63,7 @@ navigation-test = { group = "androidx.navigation", name = "navigation-testing", 
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 hilt-kapt = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 androidx-core = { module = "androidx.test:core", version.ref = "androidxCore" }
+retrofit-gson-converter = { module = "com.squareup.retrofit2:converter-gson", version.ref = "gson" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
