@@ -28,5 +28,10 @@ include(":core:common")
 include(":core:threading")
 include(":core:database")
 include(":core:datastore")
+include(":core:model")
+include(":core:data")
+include(":core:testing:unit")
 
 include(":feature:home")
+
+include(":core:testing:shared")

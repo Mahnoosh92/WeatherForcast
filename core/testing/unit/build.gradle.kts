@@ -1,13 +1,10 @@
-import java.util.Properties
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.climate.forcast.hilt)
 }
 
 android {
-    namespace = "com.mahnoosh.network"
+    namespace = "com.mahnoosh.unit"
     compileSdk = 36
 
     defaultConfig {
@@ -15,11 +12,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-
-        val properties = Properties()
-        properties.load(project.rootProject.file("local.properties").inputStream())
-        buildConfigField("String", "API_KEY", "\"${properties.getProperty("API_KEY")}\"")
-        buildConfigField("String", "BASE_URL", "\"https://api.weatherapi.com/v1/\"")
     }
 
     buildTypes {
@@ -38,19 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        buildConfig = true
-    }
 }
 
 dependencies {
-
-    // internal modules
-    implementation(projects.core.threading)
-
-    // network
-    api(libs.retrofit)
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging.interceptor)
-    implementation(libs.retrofit.gson.converter)
+    api(libs.junit)
+    api(libs.coroutines.test)
+    api(libs.turbine)
+    api(libs.mockk)
+    api(libs.truth)
 }

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="ClimateForcastApi.core.unit" target="21" />
       <module name="ClimateForcastApi.network" target="21" />
     </bytecodeTargetLevel>
   </component>
