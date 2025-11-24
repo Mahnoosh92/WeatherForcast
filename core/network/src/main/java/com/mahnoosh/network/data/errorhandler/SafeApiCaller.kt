@@ -1,5 +1,6 @@
 package com.mahnoosh.network.data.errorhandler
 
+import com.mahnoosh.network.data.model.CustomException
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject

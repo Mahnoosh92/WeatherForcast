@@ -47,6 +47,8 @@ dependencies {
 
     // internal modules
     implementation(projects.core.threading)
+    implementation(projects.core.testing.shared)
+    implementation(projects.core.testing.unit)
 
     // network
     api(libs.retrofit)

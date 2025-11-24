@@ -3,7 +3,7 @@ package com.mahnoosh.data.datasource.remote.city
 import com.mahnoosh.model.data.City
 import com.mahnoosh.model.data.DomainError
 import com.mahnoosh.network.data.ApiService
-import com.mahnoosh.network.data.errorhandler.CustomException
+import com.mahnoosh.network.data.model.CustomException
 import com.mahnoosh.network.data.errorhandler.SafeApiCaller
 import com.mahnoosh.threading.di.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher

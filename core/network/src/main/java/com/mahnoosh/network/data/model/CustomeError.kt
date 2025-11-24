@@ -1,4 +1,4 @@
-package com.mahnoosh.network.data.errorhandler
+package com.mahnoosh.network.data.model
 
 sealed class CustomException(message: String?) : Exception(message) {
 

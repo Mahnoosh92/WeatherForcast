@@ -1,7 +1,7 @@
 package com.mahnoosh.network.data.datasource.city
 
 import com.mahnoosh.network.data.ApiService
-import com.mahnoosh.network.data.errorhandler.CustomException
+import com.mahnoosh.network.data.model.CustomException
 import com.mahnoosh.network.data.errorhandler.SafeApiCaller
 import com.mahnoosh.network.data.model.CityDTO
 import com.mahnoosh.threading.di.IoDispatcher

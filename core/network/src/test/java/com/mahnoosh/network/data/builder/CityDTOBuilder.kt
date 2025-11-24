@@ -1,8 +1,8 @@
-package com.mahnoosh.shared.builder
+package com.mahnoosh.network.data.builder
 
 import com.mahnoosh.network.data.model.CityDTO
 
-class CityDTOBuilder {
+internal class CityDTOBuilder {
     private var id: Long = 1L
     private var name: String = "London"
     private var region: String = "England"

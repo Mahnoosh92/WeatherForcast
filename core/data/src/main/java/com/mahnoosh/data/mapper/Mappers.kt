@@ -11,7 +11,7 @@ import com.mahnoosh.model.data.Forecast
 import com.mahnoosh.model.data.ForecastDay
 import com.mahnoosh.model.data.Hour
 import com.mahnoosh.model.data.Location
-import com.mahnoosh.network.data.errorhandler.CustomException
+import com.mahnoosh.network.data.model.CustomException
 import com.mahnoosh.network.data.model.AstroDTO
 import com.mahnoosh.network.data.model.CityDTO
 import com.mahnoosh.network.data.model.ConditionDTO
