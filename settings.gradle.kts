@@ -35,3 +35,4 @@ include(":core:testing:unit")
 include(":feature:home")
 
 include(":core:testing:shared")
+include(":core:datastore-proto")

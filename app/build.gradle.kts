@@ -40,6 +40,17 @@ android {
     buildFeatures {
         compose = true
     }
+    packaging {
+        resources {
+            pickFirsts += "META-INF/LICENSE.md"
+            pickFirsts += "META-INF/LICENSE"
+            pickFirsts += "META-INF/NOTICE.md"
+            pickFirsts += "META-INF/NOTICE"
+            pickFirsts += "META-INF/ASL2.0"
+            pickFirsts += "META-INF/LGPL2.1"
+            pickFirsts += "META-INF/LICENSE-notice.md"
+        }
+    }
 }
 
 dependencies {
@@ -65,6 +76,7 @@ dependencies {
     // Internal projects
     implementation(projects.core.network)
     implementation(projects.feature.home)
+    implementation(projects.core.datastoreProto)
 
     testImplementation(libs.junit)
 

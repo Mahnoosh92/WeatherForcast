@@ -1,7 +1,7 @@
 package com.mahnoosh.home.presentation
 
 import androidx.compose.runtime.Immutable
-import com.mahnoosh.home.domain.model.City
+import com.mahnoosh.model.data.City
 
 sealed interface HomeUiState {
     data object Loading : HomeUiState

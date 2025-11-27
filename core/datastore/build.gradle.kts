@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.climate.forcast.hilt)
 }
 
 android {
@@ -33,11 +34,12 @@ android {
 }
 
 dependencies {
+    // Internal projects
+    implementation(projects.core.model)
+    implementation(projects.core.threading)
+    implementation(projects.core.datastoreProto)
+    implementation(projects.core.common)
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.dataStore)
+
 }

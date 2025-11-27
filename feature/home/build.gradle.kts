@@ -1,9 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.climate.forcast.hilt)
-    alias(libs.plugins.dagger.hilt.android)
-    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.climate.forcast.hilt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.kotlin.compose)
 }
@@ -49,7 +47,8 @@ dependencies {
     // Internal projects
     implementation(projects.core.network)
     implementation(projects.core.threading)
-// Compose
+    implementation(projects.core.model)
+    // Compose
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -61,10 +60,6 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-
-    // hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
 
     // serialisation
     implementation(libs.kotlinx.serialization.json)

@@ -62,14 +62,7 @@ fun HomeScreen(modifier: Modifier = Modifier, viewModel: HomeViewModel) {
                     is HomeUiState.Cities -> {
                         LazyColumn {
                             if(homeUiState is HomeUiState.Cities){
-                                items((homeUiState as HomeUiState.Cities).cities) {
-                                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                                        Text(text = it.id.toString())
-                                        IconButton(onClick = {viewModel.onEvent(HomeEvent.Increase(it.id))}) {
-                                            Icon(imageVector = Icons.Default.Add, contentDescription = null)
-                                        }
-                                    }
-                                }
+
                             }
                         }
                     }
