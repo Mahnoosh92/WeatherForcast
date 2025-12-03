@@ -63,9 +63,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+      - name: Create local.properties with SDK path
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
       - name: Set up and run Android Emulator
         # This is a community action to start an AVD (Android Virtual Device)
-        uses: reactivecircus/android-emulator-runner@v3
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 31
           target: default # or google_apis
