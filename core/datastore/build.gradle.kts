@@ -39,6 +39,7 @@ dependencies {
     implementation(projects.core.threading)
     implementation(projects.core.datastoreProto)
     implementation(projects.core.common)
+    implementation(projects.core.testing.unit)
 
     implementation(libs.androidx.dataStore)
 

@@ -38,4 +38,5 @@ dependencies {
     api(libs.turbine)
     api(libs.mockk)
     api(libs.truth)
+    api(libs.hilt.test)
 }
